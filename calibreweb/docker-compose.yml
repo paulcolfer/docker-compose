@@ -10,7 +10,7 @@ services:
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
       - data:/config
-      - /mnt/drivepool/Media/Books/MyLibrary:/books
+      - /srv/ecfa30a4-7842-4a2b-b694-c6a2046e2a97/Media/Books/MyLibrary:/books
     ports:
       - 8083:8083
     restart: unless-stopped
