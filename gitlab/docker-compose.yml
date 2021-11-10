@@ -5,11 +5,11 @@ services:
     container_name: Gitlab
     image: gitlab/gitlab-ee:latest
     restart: always
-    hostname: code.paulcolfer.ie
+    hostname: 'code.paulcolfer.ie'
     environment:
       LANG: C.UTF-8
       GITLAB_OMNIBUS_CONFIG: |
-        external_url code.paulcolfer.ie:96
+        external_url 'code.paulcolfer.ie:96'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '96:80'
