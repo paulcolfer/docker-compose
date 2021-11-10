@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: Kiwix
+    image: kiwix/kiwix-serve
+    restart: always
+    command: wikipedia_en_all_maxi_2021-03.zim
+    environment:
+      ZIM_PATH: /data/
+    ports:
+      - 26000:80
+    volumes:
+      - /host/path/to/Kiwix:/data
