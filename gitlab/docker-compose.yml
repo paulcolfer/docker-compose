@@ -2,6 +2,7 @@ version: '3.1'
 
 services:
   web:
+    container_name: Gitlab
     image: gitlab/gitlab-ee:latest
     restart: always
     hostname: code.paulcolfer.ie
