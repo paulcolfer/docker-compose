@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  web:
+    image: gitlab/gitlab-ee:latest
+    restart: always
+    hostname: code.paulcolfer.ie
+    environment:
+      LANG: C.UTF-8
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url code.paulcolfer.ie:96
+        # Add any other gitlab.rb configuration here, each on its own line
+    ports:
+      - '96:80'
+    volumes:
+      - etc:/etc/gitlab
+      - log:/var/log/gitlab
+      - opt:/var/opt/gitlab
+volumes:
+    etc:    
+    log:
+    opt:
