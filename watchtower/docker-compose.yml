@@ -2,7 +2,8 @@ version: "3"
 services:
   watchtower:
     container_name: Watchtower
-    image: containrrr/watchtower 
+    image: containrrr/watchtower
+    restart: always
     environment:
       WATCHTOWER_CLEANUP: "true"
     volumes:
