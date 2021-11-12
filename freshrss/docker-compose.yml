@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: Freshrss
+    hostname: freshrss
+    restart: always
+    ports:
+      - "22000:80"
+    volumes:
+      - data:/var/www/FreshRSS
+    environment:
+      CRON_MIN: '*/5'
+      TZ: Europe/Dublin
+volumes:
+  data:
