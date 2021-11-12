@@ -1,0 +1,21 @@
+version: "3.1"
+services:
+  unifi-controller:
+    image: linuxserver/unifi-controller
+    container_name: Unifi
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MEM_LIMIT=1024M #optionalclear
+      
+      - MEM_STARTUP=1024M #optional
+    volumes:
+      - data:/config
+    ports:
+      - 3478:3478/udp
+      - 10001:10001/udp
+      - 8080:8080
+      - 8443:8443
+    restart: always
+volumes:
+    data:    
