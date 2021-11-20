@@ -1,0 +1,20 @@
+version: "3.1"
+services:
+  bookstack:
+    image: linuxserver/bookstack
+    container_name: Bookstack
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - APP_URL=<external url>
+      - DB_HOST=mariadb
+      - DB_USER=bookstack
+      - DB_PASS=<yourdbpass>
+      - DB_DATABASE=bookstack
+    volumes:
+      - data:/config
+    ports:
+      - 6875:80
+    restart: always
+volumes:
+  data:
