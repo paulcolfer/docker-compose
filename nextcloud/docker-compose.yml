@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  app:
+    image: nextcloud
+    container_name: Nextcloud
+    restart: always
+    ports:
+      - 90:80
+    volumes:
+      - data:/var/www/html
+      
+volumes:
+  data:
