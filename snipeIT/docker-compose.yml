@@ -1,0 +1,21 @@
+version: "3"
+services:
+  snipeit:
+    image: linuxserver/snipe-it:latest
+    container_name: snipe-it
+    restart: always
+    volumes:
+      - data:/config
+    environment:
+      - NGINX_APP_URL=192.168.17.16:98
+      - MYSQL_PORT_3306_TCP_ADDR=mysql
+      - MYSQL_PORT_3306_TCP_PORT=3306
+      - MYSQL_DATABASE=snipeit
+      - MYSQL_USER=snipeituser
+      - MYSQL_PASSWORD=<secret user password>
+      - PGID=1000
+      - PUID=1000
+    ports:
+      - "98:80"
+volumes:
+    data:
