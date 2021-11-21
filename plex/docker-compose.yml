@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  plex:
+    container_name: Plex
+    image: plexinc/pms-docker
+    restart: always
+    environment:
+      - TZ=Europe/London
+      - PLEX_CLAIM=<claimToken>
+    hostname: Plex
+    network_mode: host
+    volumes:
+      - data:/config
+      - transcode:/transcode
+      - <path/to/media>:/data
+volumes:
+    data:
+    transcode:
