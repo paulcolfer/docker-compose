@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: Pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: email@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - 85:80
+    volumes:
+      - data:/var/lib/pgadmin
+volumes:
+    data:
