@@ -1,0 +1,22 @@
+version: "3.1"
+services:
+  ubooquity:
+    image: linuxserver/ubooquity
+    container_name: Ubooquity
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - MAXMEM=512M
+    volumes:
+      - data:/config
+      - <path to books>:/books
+      - <path to comics>:/comics
+      - files:/files
+    ports:
+      - 2202:2202
+      - 2203:2203
+    restart: unless-stopped
+volumes:
+    data:
+    files:
