@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  pihole:
+    container_name: Pihole
+    image: pihole/pihole:latest
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 6442:80/tcp
+    environment:
+      TZ: 'Europe/Dublin'
+      WEBPASSWORD: password
+    # Volumes store your data between container upgrades
+    volumes:
+      - data:/etc/pihole/
+      - dnsmasq:/etc/dnsmasq.d/
+    restart: always
+volumes:
+    data:
+    dnsmasq:
