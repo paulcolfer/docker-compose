@@ -1,15 +1,16 @@
-tubesync:
-  image: ghcr.io/meeb/tubesync:latest
-  container_name: tubesync
-  restart: always
-  ports:
-    - 4848:4848
-  volumes:
-    - data:/config
-    - /mnt/TubeSync:/downloads
-  environment:
-    - TZ=Europe/Dublin
-    - PUID=1000
-    - PGID=1000
+services:
+  tubesync:
+    image: ghcr.io/meeb/tubesync:latest
+    container_name: Tubesync
+    restart: always
+    ports:
+      - 4848:4848
+    volumes:
+      - data:/config
+      - /mnt/TubeSync:/downloads
+    environment:
+      - TZ=Europe/Dublin
+      - PUID=1000
+      - PGID=1000
 volumes:
     data:
