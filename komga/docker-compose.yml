@@ -12,7 +12,6 @@ services:
         read_only: true
     ports:
       - 9930:8080
-    user: "1000:1000"
     restart: always
 volumes:
     data:    
