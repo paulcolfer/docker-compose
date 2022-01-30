@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  komga:
+    image: gotson/komga
+    container_name: Komga
+    volumes:
+      - data:/config
+      - /srv/dev-disk-by-id-md-name-shodan-SSDRaid1/Comics:/data
+      - type: bind
+        source: /etc/timezone
+        target: /etc/timezone
+        read_only: true
+    ports:
+      - 9930:8080
+    user: "1000:1000"
+    restart: always
+volumes:
+    data:    
