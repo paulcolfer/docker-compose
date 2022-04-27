@@ -13,6 +13,9 @@ services:
       - data:/config
       - transcode:/transcode
       - <path/to/media>:/data
+    # pass in the Intel gpu for Intel Quicksync
+    devices:
+      - /dev/dri:/dev/dri
 volumes:
     data:
     transcode:
